@@ -2,8 +2,7 @@
  * Adds the help command to the game
  */
 
-var help = function(){
-
+game.register('help', function() {
     return {
         load: function(file,callback) {
             game.get({
@@ -12,9 +11,11 @@ var help = function(){
             }, callback);
         }
     };
-}();
+})
+
 
 cobra.register('help', function(args){
+    var help = game.request('help');
     if(args.length === 0) {
         help.load('general',screen.println);
     }
@@ -24,5 +25,6 @@ cobra.register('help', function(args){
 });
 
 cobra.register('/?', function(args){
+    var help = game.request('help');
     help.load('general',screen.println);
 });

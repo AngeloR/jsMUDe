@@ -4,21 +4,26 @@
  */
 
 
-var move = {
-    directions: ' e s w n north south east west '
-    , maps: {'n':'north', 'e':'east', 's':'south', 'w':'west'}
-    , is_valid_direction: function(d) {
-        return (directions.indexOf(' '+d+' ') > -1);
-    }
-    , get_real_direction: function(d) {
-        if(maps[d] !== undefined) {
-            return maps[d];
+game.register('move', function() {
+    var directions = ' e s w n north south east west '
+        , maps = {'n':'north', 'e':'east', 's':'south', 'w':'west'}
+
+    return {
+        is_valid_direction: function(d) {
+            return (directions.indexOf(' '+d+' ') > -1);
         }
-        return d;
+        , get_real_direction: function(d) {
+            if(maps[d] !== undefined) {
+                return maps[d];
+            }
+            return d;
+        }
     }
-};
+}());
+
 
 cobra.register('walk',function(args){
+    var move = game.request('move');
     if(move.is_valid_direction(args[0])) {
         /**
          * Although logically this should be a post because, since we are 
@@ -34,6 +39,7 @@ cobra.register('walk',function(args){
 });
 
 cobra.register('run',function(args){
+    var move = game.request('move');
     if(move.is_valid_direction(args[0])) {
         game.get({url:'player/run/'+move.get_real_direction(args[0])}, function(d){
             screen.println(d.message);
