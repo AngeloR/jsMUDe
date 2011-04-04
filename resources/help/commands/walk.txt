@@ -1,0 +1,9 @@
+
+
+Walking is the primary mode of transportation throughout the world. By typing <b class="command">walk</b> followed by a direction you can move between rooms and maps. The valid directions are:
+<b class="arguments">north, south, east, west</b>
+
+You can also utilize the shortcuts: <b class="arguments">n, s, e, w</b>
+
+Ex: <b class="command">walk</b> <b class="arguments">north</b> or <b class="command">walk</b> <b class="arguments">n</b>
+

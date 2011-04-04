@@ -1,0 +1,1 @@
+Welcome to the game. Enter <b class="command">/?</b> to view the help topics.

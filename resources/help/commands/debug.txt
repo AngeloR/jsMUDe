@@ -1,0 +1,16 @@
+
+
+<b>Attention! debug is an ADMINISTRATIVE COMMAND! You can do a lot of harm with it.</b>
+
+<b class="command">debug</b> allows you to execute various files and actions for testing purposes. If you were working on a text resource file and you wanted to know what it would look like in the browser, then you could use debug to show you what it would look like.
+
+<b class="command">debug</b> comes with a variety of switches, and more are added as necessary. If you think you need something that is not in place yet, just request it.
+
+Switches
+--------
+
+
+-show file:  Allows you to view the contents of file assuming file is the valid path to the file.
+              ex: debug -show resources/help/general.txt
+                  will display the general.txt file in the window
+
